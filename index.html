@@ -19,12 +19,12 @@
           sans-serif;
       }
       .main {
-        max-width: 800px;
+        max-width: 1120px;
         margin: 0 auto;
+        padding: 0 24px 64px;
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: center;
         min-height: 100vh;
       }
       .title {
@@ -32,101 +32,118 @@
         color: #fff;
         font-size: 4rem;
         letter-spacing: 0.18em;
-        margin-top: 48px;
-        margin-bottom: 30px;
+        margin-top: 72px;
+        margin-bottom: 12px;
         font-weight: 800;
         font-family: "Seymour One", sans-serif;
+      }
+      .subtitle {
+        color: rgba(255, 255, 255, 0.85);
+        font-size: 1rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        margin-bottom: 56px;
+        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+      }
+
+      .containers {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
         width: 100%;
+      }
+
+      .container {
         display: flex;
-        justify-content: center;
         align-items: center;
+        gap: 18px;
+        padding: 20px;
+        background: rgba(255, 255, 255, 0.14);
+        border: 1px solid rgba(255, 255, 255, 0.22);
+        border-radius: 20px;
+        text-decoration: none;
+        color: inherit;
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        transition: transform 0.25s ease, background 0.25s ease,
+          box-shadow 0.25s ease;
+      }
+
+      .container:hover {
+        transform: translateY(-3px);
+        background: rgba(255, 255, 255, 0.22);
+        box-shadow: 0 12px 32px rgba(0, 0, 0, 0.18);
+      }
+
+      .container:active {
+        transform: translateY(0);
       }
 
       .app-icon {
-        width: 120px;
-        height: 120px;
-        border-radius: 24px;
+        width: 72px;
+        height: 72px;
+        border-radius: 18px;
         background-color: #1f4bab;
-        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-        transition: all 0.3s ease;
-        display: block;
-        margin: 0 auto;
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+        flex-shrink: 0;
       }
 
-      .app-icon:hover {
-        transform: scale(1.1);
-        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
-      }
-
-      .app-icon:active {
-        transform: scale(0.95);
+      .app-text {
+        display: flex;
+        flex-direction: column;
+        min-width: 0;
       }
 
       .app-name {
         color: white;
-        font-size: 24px;
-        font-weight: 600;
-        margin-top: 20px;
-        text-align: center;
-        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        font-size: 18px;
+        font-weight: 700;
+        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
       }
 
       .app-description {
-        color: rgba(255, 255, 255, 0.8);
-        font-size: 18px;
-        margin-top: 12px;
-        text-align: center;
-        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
-        max-width: 300px;
+        color: rgba(255, 255, 255, 0.82);
+        font-size: 14px;
+        margin-top: 4px;
         line-height: 1.4;
       }
 
-      .containers {
-        display: flex;
-        justify-content: center;
-        gap: 40px;
-        margin-top: 60px;
-        width: 100%;
-      }
-      .container {
-        width: 40%;
-        text-align: center;
-        text-decoration: none;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+      @media (max-width: 900px) {
+        .containers {
+          grid-template-columns: repeat(2, 1fr);
+        }
       }
 
       @media (max-width: 600px) {
         .main {
-          max-width: 100%;
-          padding: 0 8px;
+          padding: 0 16px 48px;
         }
         .title {
           font-size: 2.2rem;
-          margin-top: 32px;
-          margin-bottom: 18px;
+          margin-top: 40px;
+        }
+        .subtitle {
+          font-size: 0.8rem;
+          margin-bottom: 32px;
         }
         .containers {
-          flex-direction: column;
-          gap: 24px;
-          margin-top: 32px;
+          grid-template-columns: 1fr;
+          gap: 14px;
         }
         .container {
-          width: 100%;
-          margin: 0 auto;
+          padding: 16px;
+          gap: 14px;
         }
         .app-icon {
-          width: 80px;
-          height: 80px;
+          width: 60px;
+          height: 60px;
+          border-radius: 14px;
         }
         .app-name {
-          font-size: 18px;
-          margin-top: 12px;
+          font-size: 16px;
         }
         .app-description {
-          font-size: 15px;
-          max-width: 90vw;
+          font-size: 13px;
         }
       }
     </style>
@@ -141,51 +158,57 @@
   <body>
     <div class="main">
       <div class="title">ELSETECH</div>
+      <div class="subtitle"></div>
       <div class="containers">
-        <div class="container">
-          <a href="https://icaption.elsetech.app" target="_blank">
-            <img src="https://icaption.elsetech.app/logo.png" class="app-icon"
-          /></a>
-          <div class="app-name">iCaption</div>
-          <div class="app-description">
-            Caption and translation for any audio
+        <a class="container" href="https://icaption.elsetech.app" target="_blank">
+          <img src="https://icaption.elsetech.app/logo.png" class="app-icon" />
+          <div class="app-text">
+            <div class="app-name">iCaption</div>
+            <div class="app-description">Caption and translation for any audio</div>
           </div>
-        </div>
-        <div class="container">
-          <a href="https://itrans.elsetech.app" target="_blank">
-            <img src="https://itrans.elsetech.app/logo.png" class="app-icon" />
-          </a>
-          <div class="app-name">iTrans</div>
-          <div class="app-description">Instant translation for any text</div>
-        </div>
-        <div class="container">
-          <a href="https://pradar.elsetech.app" target="_blank">
-            <img src="https://pradar.elsetech.app/logo.png" class="app-icon" />
-          </a>
-          <div class="app-name">pRadar</div>
-          <div class="app-description">Singapore Property Radar</div>
-        </div>
-        <div class="container">
-          <a href="https://utc8times.elsetech.app" target="_blank">
-            <img src="https://utc8times.elsetech.app/logo-256.svg" class="app-icon" />
-          </a>
-          <div class="app-name">UTC+8 Times</div>
-          <div class="app-description">A Chinese Independent Bloger Club</div>
-        </div>
-        <div class="container">
-          <a href="https://brush.elsetech.app" target="_blank">
-            <img src="https://brush.elsetech.app/logo.svg" class="app-icon" />
-          </a>
-          <div class="app-name">Magic Brush</div>
-          <div class="app-description">Draw your idea in a few lines.</div>
-        </div>
-        <div class="container">
-          <a href="https://agenet.elsetech.app" target="_blank">
-            <img src="https://agenet.elsetech.app/favicon.svg" class="app-icon" />
-          </a>
-          <div class="app-name">Agenet</div>
-          <div class="app-description">A workspace for AI agents.</div>
-        </div>
+        </a>
+        <a class="container" href="https://itrans.elsetech.app" target="_blank">
+          <img src="https://itrans.elsetech.app/logo.png" class="app-icon" />
+          <div class="app-text">
+            <div class="app-name">iTrans</div>
+            <div class="app-description">Instant translation for any text</div>
+          </div>
+        </a>
+        <a class="container" href="https://pradar.elsetech.app" target="_blank">
+          <img src="https://pradar.elsetech.app/logo.png" class="app-icon" />
+          <div class="app-text">
+            <div class="app-name">pRadar</div>
+            <div class="app-description">Singapore Property Radar</div>
+          </div>
+        </a>
+        <a class="container" href="https://utc8times.elsetech.app" target="_blank">
+          <img src="https://utc8times.elsetech.app/logo-256.svg" class="app-icon" />
+          <div class="app-text">
+            <div class="app-name">UTC+8 Times</div>
+            <div class="app-description">A Chinese Independent Bloger Club</div>
+          </div>
+        </a>
+        <a class="container" href="https://brush.elsetech.app" target="_blank">
+          <img src="https://brush.elsetech.app/logo.svg" class="app-icon" />
+          <div class="app-text">
+            <div class="app-name">Magic Brush</div>
+            <div class="app-description">Draw your idea in a few lines</div>
+          </div>
+        </a>
+        <a class="container" href="https://agenet.elsetech.app" target="_blank">
+          <img src="https://agenet.elsetech.app/favicon.svg" class="app-icon" />
+          <div class="app-text">
+            <div class="app-name">Agenet</div>
+            <div class="app-description">A workspace for AI agents</div>
+          </div>
+        </a>
+        <a class="container" href="https://animap.elsetech.app" target="_blank">
+          <img src="https://animap.elsetech.app/logo.svg" class="app-icon" />
+          <div class="app-text">
+            <div class="app-name">Animap</div>
+            <div class="app-description">Sightings, plotted — a quiet record of the wild</div>
+          </div>
+        </a>
       </div>
     </div>
   </body>
