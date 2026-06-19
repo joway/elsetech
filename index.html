@@ -28,6 +28,9 @@
       content="ELSETECH builds small, fast indie apps for captioning, translation, drawing, and AI workflows."
     />
     <meta property="og:image" content="https://elsetech.app/logo.png" />
+    <meta property="og:image:width" content="120" />
+    <meta property="og:image:height" content="120" />
+    <meta property="og:image:alt" content="ELSETECH logo" />
     <meta property="og:locale" content="en_US" />
 
     <!-- Twitter -->
@@ -46,18 +49,49 @@
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "ELSETECH",
-        "url": "https://elsetech.app/",
-        "logo": "https://elsetech.app/logo.png",
-        "description": "ELSETECH builds small, fast indie apps for captioning, translation, drawing, and AI workflows."
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://elsetech.app/#organization",
+            "name": "ELSETECH",
+            "url": "https://elsetech.app/",
+            "logo": "https://elsetech.app/logo.png",
+            "description": "ELSETECH builds small, fast indie apps for captioning, translation, drawing, and AI workflows."
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://elsetech.app/#website",
+            "name": "ELSETECH",
+            "url": "https://elsetech.app/",
+            "publisher": { "@id": "https://elsetech.app/#organization" }
+          },
+          {
+            "@type": "ItemList",
+            "name": "ELSETECH apps",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "name": "iCaption", "url": "https://icaption.elsetech.app" },
+              { "@type": "ListItem", "position": 2, "name": "iTrans", "url": "https://itrans.elsetech.app" },
+              { "@type": "ListItem", "position": 3, "name": "pRadar", "url": "https://pradar.elsetech.app" },
+              { "@type": "ListItem", "position": 4, "name": "UTC+8 Times", "url": "https://utc8times.elsetech.app" },
+              { "@type": "ListItem", "position": 5, "name": "Magic Brush", "url": "https://brush.elsetech.app" },
+              { "@type": "ListItem", "position": 6, "name": "Agenet", "url": "https://agenet.elsetech.app" },
+              { "@type": "ListItem", "position": 7, "name": "Animap", "url": "https://animap.elsetech.app" },
+              { "@type": "ListItem", "position": 8, "name": "Sketch", "url": "https://sketch.elsetech.app" },
+              { "@type": "ListItem", "position": 9, "name": "CodeZ", "url": "https://codez.elsetech.app" },
+              { "@type": "ListItem", "position": 10, "name": "My.Box", "url": "https://mybox.elsetech.app" },
+              { "@type": "ListItem", "position": 11, "name": "WebTerm", "url": "https://webterm.elsetech.app" },
+              { "@type": "ListItem", "position": 12, "name": "FiNews", "url": "https://finews.elsetech.app" },
+              { "@type": "ListItem", "position": 13, "name": "JBar", "url": "https://github.com/joway/jbar" }
+            ]
+          }
+        ]
       }
     </script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Seymour+One&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Seymour+One&display=swap"
       rel="stylesheet"
     />
     <style>
@@ -86,6 +120,14 @@
         margin-bottom: 12px;
         font-weight: 800;
         font-family: "Seymour One", sans-serif;
+      }
+      .tagline {
+        text-align: center;
+        color: rgba(255, 255, 255, 0.9);
+        font-size: 1.15rem;
+        line-height: 1.6;
+        max-width: 640px;
+        margin: 0 auto;
       }
       .containers {
         margin-top: 50px;
@@ -197,93 +239,97 @@
   <body>
     <main class="main">
       <h1 class="title">ELSETECH</h1>
+      <p class="tagline">
+        ELSETECH builds small, fast indie apps for captioning, translation,
+        drawing, and AI workflows. Explore the full collection below.
+      </p>
       <nav class="containers" aria-label="ELSETECH apps">
         <a class="container" href="https://icaption.elsetech.app" target="_blank" rel="noopener">
-          <img src="https://icaption.elsetech.app/logo.png" class="app-icon" alt="iCaption logo" />
+          <img src="https://icaption.elsetech.app/logo.png" class="app-icon" width="72" height="72" loading="lazy" decoding="async" alt="iCaption logo" />
           <div class="app-text">
             <h2 class="app-name">iCaption</h2>
             <div class="app-description">Caption and translation for any audio</div>
           </div>
         </a>
         <a class="container" href="https://itrans.elsetech.app" target="_blank" rel="noopener">
-          <img src="https://itrans.elsetech.app/logo.png" class="app-icon" alt="iTrans logo" />
+          <img src="https://itrans.elsetech.app/logo.png" class="app-icon" width="72" height="72" loading="lazy" decoding="async" alt="iTrans logo" />
           <div class="app-text">
             <h2 class="app-name">iTrans</h2>
             <div class="app-description">Instant translation for any text</div>
           </div>
         </a>
         <a class="container" href="https://pradar.elsetech.app" target="_blank" rel="noopener">
-          <img src="https://pradar.elsetech.app/logo.png" class="app-icon" alt="pRadar logo" />
+          <img src="https://pradar.elsetech.app/logo.png" class="app-icon" width="72" height="72" loading="lazy" decoding="async" alt="pRadar logo" />
           <div class="app-text">
             <h2 class="app-name">pRadar</h2>
             <div class="app-description">Singapore Property Radar</div>
           </div>
         </a>
         <a class="container" href="https://utc8times.elsetech.app" target="_blank" rel="noopener">
-          <img src="https://utc8times.elsetech.app/logo-256.svg" class="app-icon" alt="UTC+8 Times logo" />
+          <img src="https://utc8times.elsetech.app/logo-256.svg" class="app-icon" width="72" height="72" loading="lazy" decoding="async" alt="UTC+8 Times logo" />
           <div class="app-text">
             <h2 class="app-name">UTC+8 Times</h2>
             <div class="app-description">A Chinese Independent Bloger Club</div>
           </div>
         </a>
         <a class="container" href="https://brush.elsetech.app" target="_blank" rel="noopener">
-          <img src="https://brush.elsetech.app/logo.svg" class="app-icon" alt="Magic Brush logo" />
+          <img src="https://brush.elsetech.app/logo.svg" class="app-icon" width="72" height="72" loading="lazy" decoding="async" alt="Magic Brush logo" />
           <div class="app-text">
             <h2 class="app-name">Magic Brush</h2>
             <div class="app-description">Draw your idea in a few lines</div>
           </div>
         </a>
         <a class="container" href="https://agenet.elsetech.app" target="_blank" rel="noopener">
-          <img src="https://agenet.elsetech.app/favicon.svg" class="app-icon" alt="Agenet logo" />
+          <img src="https://agenet.elsetech.app/favicon.svg" class="app-icon" width="72" height="72" loading="lazy" decoding="async" alt="Agenet logo" />
           <div class="app-text">
             <h2 class="app-name">Agenet</h2>
             <div class="app-description">A workspace for AI agents</div>
           </div>
         </a>
         <a class="container" href="https://animap.elsetech.app" target="_blank" rel="noopener">
-          <img src="https://animap.elsetech.app/logo.svg" class="app-icon" alt="Animap logo" />
+          <img src="https://animap.elsetech.app/logo.svg" class="app-icon" width="72" height="72" loading="lazy" decoding="async" alt="Animap logo" />
           <div class="app-text">
             <h2 class="app-name">Animap</h2>
             <div class="app-description">Sightings, plotted — a quiet record of the wild</div>
           </div>
         </a>
         <a class="container" href="https://sketch.elsetech.app" target="_blank" rel="noopener">
-          <img src="https://sketch.elsetech.app/logo.svg" class="app-icon" alt="Sketch logo" />
+          <img src="https://sketch.elsetech.app/logo.svg" class="app-icon" width="72" height="72" loading="lazy" decoding="async" alt="Sketch logo" />
           <div class="app-text">
             <h2 class="app-name">Sketch</h2>
             <div class="app-description">A touchpad friendly drawing app</div>
           </div>
         </a>
         <a class="container" href="https://codez.elsetech.app" target="_blank" rel="noopener">
-          <img src="https://codez.elsetech.app/assets/logo-512.png" class="app-icon" alt="CodeZ logo" />
+          <img src="https://codez.elsetech.app/assets/logo-512.png" class="app-icon" width="72" height="72" loading="lazy" decoding="async" alt="CodeZ logo" />
           <div class="app-text">
             <h2 class="app-name">CodeZ</h2>
             <div class="app-description">Browse code, edit files, review git diffs, and run Codex or Claude Code sessions from one fast native window.</div>
           </div>
         </a>
         <a class="container" href="https://mybox.elsetech.app" target="_blank" rel="noopener">
-          <img src="https://mybox.elsetech.app/logo.svg" class="app-icon" alt="My.Box logo" />
+          <img src="https://mybox.elsetech.app/logo.svg" class="app-icon" width="72" height="72" loading="lazy" decoding="async" alt="My.Box logo" />
           <div class="app-text">
             <h2 class="app-name">My.Box</h2>
             <div class="app-description">A vintage sticker album for the things you love.</div>
           </div>
         </a>
         <a class="container" href="https://webterm.elsetech.app" target="_blank" rel="noopener">
-          <img src="https://webterm.elsetech.app/favicon.svg" class="app-icon" alt="WebTerm logo" />
+          <img src="https://webterm.elsetech.app/favicon.svg" class="app-icon" width="72" height="72" loading="lazy" decoding="async" alt="WebTerm logo" />
           <div class="app-text">
             <h2 class="app-name">WebTerm</h2>
             <div class="app-description">A web-based terminal emulator for remote server.</div>
           </div>
         </a>
         <a class="container" href="https://finews.elsetech.app" target="_blank" rel="noopener">
-          <img src="https://finews.elsetech.app/favicon.svg" class="app-icon" alt="FiNews logo" />
+          <img src="https://finews.elsetech.app/favicon.svg" class="app-icon" width="72" height="72" loading="lazy" decoding="async" alt="FiNews logo" />
           <div class="app-text">
             <h2 class="app-name">FiNews</h2>
             <div class="app-description">A daily financial news aggregator.</div>
           </div>
         </a>
         <a class="container" href="https://github.com/joway/jbar" target="_blank" rel="noopener">
-          <img src="https://raw.githubusercontent.com/joway/jbar/main/assets/icon.png" class="app-icon" alt="JBar logo" />
+          <img src="https://raw.githubusercontent.com/joway/jbar/main/assets/icon.png" class="app-icon" width="72" height="72" loading="lazy" decoding="async" alt="JBar logo" />
           <div class="app-text">
             <h2 class="app-name">JBar</h2>
             <div class="app-description">A menu bar app for Jike.</div>
